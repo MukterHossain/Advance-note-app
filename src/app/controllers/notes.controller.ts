@@ -29,7 +29,7 @@ notesRoutes.post("/create-note",  async(req: Request, res: Response) => {
 })
 // create a route to get all notes
 notesRoutes.get("/",  async(req: Request, res: Response) => {
-    const notes = await Note.find()
+    const notes = await Note.find().populate("user")
     res.status(201).json({
         success:true,
         message: "Note created successfully",

@@ -19,12 +19,19 @@ const noteSchema = new Schema<INotes>({
     tags: {
         label: {type: String, required: true},
         color: {type: String, default: "gray"}
-    }
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+        required: true
+    },
 },
+
 {
     versionKey: false, // to remove __v field from the document
     timestamps: true // to add createdAt and updatedAt fields
-}
+},
+
 )
 
 // create a model for notes
