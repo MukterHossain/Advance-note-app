@@ -1,5 +1,5 @@
 
-// testMongoosTs
+
 import { Server } from "http";
 import app from "./app";
 import mongoose from "mongoose";
